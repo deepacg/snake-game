@@ -135,16 +135,17 @@ function render(){
 
 render()
 
-let level = document.getElementById('level')
-let timer = 200
-if(level.value == 'beginner')
-    timer = 300
-else if(level.value == 'intermediate')
-    timer = 200
-else if(level.value == 'hard')
-    timer = 100
-console.log(level.value)
-var gm = setInterval(render, timer)
+// let level = document.getElementById('level')
+// let timer = 200
+// if(level.value == 'beginner')
+//     timer = 300
+// else if(level.value == 'intermediate')
+//     timer = 200
+// else if(level.value == 'hard')
+//     timer = 100
+// console.log(level.value)
+
+var gm = setInterval(render, 200)
 
 function gameOver(){
     clearInterval(gm)
