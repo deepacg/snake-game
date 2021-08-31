@@ -5,7 +5,7 @@ const canvasSize = 400
 canvas.width = canvasSize
 canvas.height = canvasSize
 
-const snakeBox = 20
+const snakeBox = 15
 const totalMoves = canvasSize/snakeBox
 
 const apple = new Image()
