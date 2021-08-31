@@ -7,3 +7,29 @@
 #canvas{
     border: solid 1px black
 }
+
+.control_btns{
+    padding: 10px;
+    font-size: large;
+    font-weight: bolder;
+    background-color: bisque;
+    color: darkred;
+    border-radius: 10px;
+    border-color: darkgreen;
+}
+
+.controls{
+    margin-left: 50px;
+    margin-top: 10px
+    
+}
+
+.new-game{
+    margin: 20px;
+    padding: 10px;
+
+    background-color: lightpink;
+    color: maroon;
+    border-radius: 10px;
+    border-color: darkgreen;
+}

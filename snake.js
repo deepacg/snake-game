@@ -45,22 +45,41 @@ let score = 0
 
 let dir = ''
 document.addEventListener('keydown', direction)
+let btn
+document.getElementById('up').addEventListener('click', function(){
+    btn = 'up'
+    direction()
+})
+document.getElementById('left').addEventListener('click', function(){
+    btn = 'left'
+    direction()
+})
+document.getElementById('right').addEventListener('click', function(){
+    btn = 'right'
+    direction()
+})
+document.getElementById('down').addEventListener('click', function(){
+    btn = 'down'
+    direction()
+})
 
 function direction() {
     let key = event.keyCode
-    if (key == 37 && dir != 'RIGHT'){
+ 
+
+    if ((key == 37 || btn == 'left') && dir != 'RIGHT'){
         dir = 'LEFT'
         left.play()
     }
-    else if (key == 38 && dir != 'DOWN'){
+    else if ((key == 38 || btn == 'up') && dir != 'DOWN'){
         dir = 'UP'
         up.play()
     }
-    else if (key == 39 && dir != 'LEFT'){
+    else if ((key == 39 || btn == 'right') && dir != 'LEFT'){
         dir = 'RIGHT'
         right.play()
     }
-    else if (key == 40 && dir != 'UP'){
+    else if ((key == 40 || btn == 'down') && dir != 'UP'){
         dir = 'DOWN'
         down.play()
     }
