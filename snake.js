@@ -45,7 +45,7 @@ let score = 0
 
 let dir = ''
 document.addEventListener('keydown', direction)
-let btn
+let btn = ''
 document.getElementById('up').addEventListener('click', function(){
     btn = 'up'
     direction()

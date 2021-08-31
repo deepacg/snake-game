@@ -24,12 +24,11 @@
     
 }
 
-.new-game{
+.new_game{
     margin: 20px;
     padding: 10px;
-
     background-color: lightpink;
     color: maroon;
     border-radius: 10px;
-    border-color: darkgreen;
+    border-color: mediumvioletred;
 }
