@@ -1,7 +1,7 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
-const canvasSize = 600
+const canvasSize = 400
 canvas.width = canvasSize
 canvas.height = canvasSize
 
