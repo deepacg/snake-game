@@ -24,6 +24,10 @@ down.src = 'audio/down.mp3'
 left.src = 'audio/left.mp3'
 right.src = 'audio/right.mp3'
 
+// define level
+
+var level = ''
+
 // define snake
 
 let snake = []
@@ -66,7 +70,6 @@ document.getElementById('down').addEventListener('click', function(){
 function direction() {
     let key = event.keyCode
  
-
     if ((key == 37 || btn == 'left') && dir != 'RIGHT'){
         dir = 'LEFT'
         left.play()
@@ -83,6 +86,8 @@ function direction() {
         dir = 'DOWN'
         down.play()
     }
+
+
 }
 
 function getFood(){
@@ -90,6 +95,7 @@ function getFood(){
         x: Math.floor(Math.random()*(totalMoves-2-3)+3)*snakeBox,
         y: Math.floor(Math.random()*(totalMoves-2-3)+3)*snakeBox
     }
+    // ctx.drawImage(apple, x, y, snakeBox, snakeBox)
 }
 
 // To get random value between 2 values Math.random()*(max-min)+min
@@ -141,6 +147,7 @@ function render(){
 
     if(snakeX < 0 || snakeX > canvasSize || snakeY < 0 || snakeY > canvasSize || collisionDetection(newHead, snake)){
         gameOver()
+        
         return
     }
 
@@ -150,21 +157,24 @@ function render(){
     ctx.font = '25px tahoma'
     ctx.fillText('Score: ', 10, 40)
     ctx.fillText(score, 90, 40)
+
 }
 
-render()
+// render()
+// var gm = ''
+// document.getElementById('level').addEventListener('change', function(){
+    
+//     level = this.value
+   
+// })
+// if(level == 'beginner')
+// gm = setInterval(render, 1000) 
+// else if(level == 'intermediate')
+// gm = setInterval(render, 500) 
+// else if(level == 'hard')
+// gm = setInterval(render, 100) 
 
-// let level = document.getElementById('level')
-// let timer = 200
-// if(level.value == 'beginner')
-//     timer = 300
-// else if(level.value == 'intermediate')
-//     timer = 200
-// else if(level.value == 'hard')
-//     timer = 100
-// console.log(level.value)
-
-var gm = setInterval(render, 200)
+var gm = setInterval(render, 200) 
 
 function gameOver(){
     clearInterval(gm)
@@ -173,5 +183,12 @@ function gameOver(){
     ctx.fillStyle = 'red'
     ctx.font = '40px tahoma'
     ctx.fillText('Game over!', canvasSize/2-100, canvasSize/2)
+    ctx.fillStyle = 'blue'
+    ctx.font = '20px tahoma'
+    if(score > localStorage.getItem('High score')) {
+        ctx.fillText('New High score set!! '+score, canvasSize/2-110, canvasSize/2+30)
+        localStorage.setItem('High score', score)
+    }
+
 }
 
